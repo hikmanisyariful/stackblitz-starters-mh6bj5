@@ -15,7 +15,14 @@ p {
 }
 
 .formSection {
-  padding: 2em;
+  padding: clamp(1em, 0.1vw, 2em);
+  display: flex;
+  justify-content: center;
+}
+
+.formContainer {
+  min-width: 300px;
+  max-width: 450px;
 }
 
 .formWrapper {
@@ -191,6 +198,10 @@ p {
   justify-content: center;
 }
 
+.divider span {
+  font-family: 14px;
+}
+
 .buttonAuth {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -233,6 +244,11 @@ button[data-variant='secondary']:hover {
 
 button[data-size='small'] {
   padding: 12px 1em;
+  font-size: clamp(13px, 2vw, 1em);
+}
+
+button[data-size='medium'] {
+  font-weight: 600;
 }
 
 button:disabled {
