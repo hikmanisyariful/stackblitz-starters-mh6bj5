@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import InputField from './InputField';
 import { FormProvider, useForm } from 'react-hook-form';
+import Checkbox from './Checkbox';
 
 export default function Form() {
   const methods = useForm({
@@ -23,6 +24,9 @@ export default function Form() {
               setShowPassword(e);
             }}
           />
+          <div className="info">
+            <Checkbox label="Remember me" name="remember_me" />
+          </div>
         </form>
       </FormProvider>
     </div>

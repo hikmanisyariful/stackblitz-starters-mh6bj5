@@ -1,10 +1,7 @@
-import React, {
-  HTMLInputTypeAttribute,
-  InputHTMLAttributes,
-  useState,
-} from 'react';
+import React, { HTMLInputTypeAttribute, InputHTMLAttributes } from 'react';
 import { Controller, useFormContext, ValidationRule } from 'react-hook-form';
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import { RiErrorWarningLine } from 'react-icons/ri';
 
 export type InputFieldProps = {
   label?: string;
@@ -49,7 +46,7 @@ export default function InputField({
     .set('password', {
       value: patterns.password,
       message:
-        'Password must contains Uppercase, Lowercase, Symbol, and Number',
+        'Password must contains Uppercase, Lowercase, Symbol, and Number.',
       minLength: 8,
     });
 
@@ -60,7 +57,7 @@ export default function InputField({
       defaultValue=""
       rules={{
         required: { value: required, message: 'This field is required.' },
-        pattern: fieldPatternRules.get(name === 'password' ? name : type),
+        pattern: fieldPatternRules.get(toggleEye ? 'password' : type),
       }}
       render={({ field, fieldState: { error } }) => {
         return (
@@ -84,7 +81,12 @@ export default function InputField({
 }
 
 function ErrorField({ message }: { message?: string }) {
-  return <span className="errorMessaage">{message ?? 'Error'}</span>;
+  return (
+    <div className="errorMessage">
+      <RiErrorWarningLine className="warningIcon" />
+      <span>{message ?? 'Error'}</span>
+    </div>
+  );
 }
 
 function EyeComponent({
