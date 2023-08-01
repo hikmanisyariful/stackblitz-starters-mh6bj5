@@ -1,15 +1,31 @@
-import React from "react";
-import InputField from "./InputField";
+import React, { useState } from 'react';
+import InputField from './InputField';
+import { FormProvider, useForm } from 'react-hook-form';
 
 export default function Form() {
-  return (
-    <div>
-      <h1>Hello</h1>
-      <h6>Enter your email and password to login</h6>
+  const methods = useForm({
+    mode: 'onChange',
+  });
+  const [showPassword, setShowPassword] = useState<boolean>(false);
 
-      <div>
-        <InputField name="email" label="email" />
-      </div>
+  return (
+    <div className="formSection">
+      <FormProvider {...methods}>
+        <h1>Hello</h1>
+        <p>Enter your email and password to login.</p>
+        {JSON.stringify(showPassword)}
+        <form className="formWrapper">
+          <InputField name="email" label="Email" />
+          <InputField
+            name="password"
+            label="Password"
+            type={showPassword ? 'text' : 'password'}
+            toggleEye={(e) => {
+              setShowPassword(e);
+            }}
+          />
+        </form>
+      </FormProvider>
     </div>
   );
 }
