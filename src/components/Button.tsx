@@ -32,7 +32,7 @@ export default function Button({
       data-loading={loading}
       data-size={size}
       data-variant={variant}
-      disabled={loading}
+      disabled={loading || props.disabled}
       className={className}
       {...props}
     >

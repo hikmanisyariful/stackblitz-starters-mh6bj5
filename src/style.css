@@ -15,14 +15,27 @@ p {
 }
 
 .formSection {
-  padding: clamp(1em, 0.1vw, 2em);
-  display: flex;
+  margin: 0 auto;
+  padding: clamp(1em, 1.2vw, 2em);
+  display: grid;
   justify-content: center;
+  width: clamp(300px, 30vw, 500px);
+  position: relative;
 }
 
-.formContainer {
-  min-width: 300px;
-  max-width: 450px;
+.notification {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  border-radius: 8px;
+}
+
+.notification[data-status='success'] {
+  background-color: rgb(60, 179, 113, 0.4);
+}
+
+.notification[data-status='redirect'] {
+  background-color: rgb(106, 90, 205, 0.4);
 }
 
 .formWrapper {
@@ -244,7 +257,7 @@ button[data-variant='secondary']:hover {
 
 button[data-size='small'] {
   padding: 12px 1em;
-  font-size: clamp(13px, 2vw, 1em);
+  font-size: clamp(13px, 1.2vw, 1em);
 }
 
 button[data-size='medium'] {
