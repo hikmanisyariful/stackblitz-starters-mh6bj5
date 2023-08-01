@@ -56,7 +56,10 @@ export default function Form() {
     setTimeout(() => {
       setLoadingLogin(false);
       reset();
-      handleNotification('Welcome to Lorem ipsum dolor si amet', true);
+      handleNotification(
+        `Welcome, email: ${data.email}, password: ${data.password}`,
+        true
+      );
     }, 3000);
   };
 
