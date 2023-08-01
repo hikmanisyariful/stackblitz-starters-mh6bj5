@@ -59,12 +59,8 @@ p {
 }
 
 .formControl .inputWrapper input[type='email']:focus,
-.formControl
-  .inputWrapper
-  input[type='text']:focus
-  .formControl
-  .inputWrapper
-  input[type='password']:focus {
+.formControl .inputWrapper input[type='text']:focus,
+.formControl .inputWrapper input[type='password']:focus {
   outline: 1px solid slateblue;
 }
 
@@ -176,4 +172,70 @@ p {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.infoWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttonSubmit {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+}
+
+.divider {
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: center;
+}
+
+.buttonAuth {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.buttonLink {
+  text-underline-offset: 3px;
+}
+
+button {
+  cursor: pointer;
+  user-select: none;
+  font-family: inherit;
+  font-size: 1em;
+  padding: 1em;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+button[data-variant='primary'] {
+  background: var(--iris-80, #7879f1);
+  color: #fff;
+}
+
+button[data-variant='secondary'] {
+  border: 1px solid #3e334e;
+  color: inherit;
+}
+
+button[data-variant='primary']:hover,
+button[data-variant='secondary']:hover {
+  opacity: 0.7;
+}
+
+button[data-size='small'] {
+  padding: 12px 1em;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  background-color: rgb(214, 214, 214);
 }

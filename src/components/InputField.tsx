@@ -54,10 +54,10 @@ export default function InputField({
     <Controller
       control={control}
       name={name}
-      defaultValue=""
       rules={{
         required: { value: required, message: 'This field is required.' },
         pattern: fieldPatternRules.get(toggleEye ? 'password' : type),
+        minLength: { value: 1, message: 'Minimal character 1' },
       }}
       render={({ field, fieldState: { error } }) => {
         return (
