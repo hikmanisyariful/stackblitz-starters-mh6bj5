@@ -13,9 +13,8 @@ export default function Form() {
       <FormProvider {...methods}>
         <h1>Hello</h1>
         <p>Enter your email and password to login.</p>
-        {JSON.stringify(showPassword)}
         <form className="formWrapper">
-          <InputField name="email" label="Email" />
+          <InputField name="email" label="Email" type="email" />
           <InputField
             name="password"
             label="Password"
