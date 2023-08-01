@@ -17,6 +17,7 @@ p {
 .appContainer {
   display: grid;
   grid-template-columns: auto minmax(auto, 600px);
+  justify-items: center;
   min-height: 100vh;
 }
 
@@ -51,7 +52,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: clamp(300px, 30vw, 450px);
+  width: clamp(300px, 35vw, 450px);
   position: relative;
 }
 
@@ -312,6 +313,7 @@ button:disabled {
 @media (max-width: 826px) {
   .appContainer {
     grid-template-columns: 1fr;
+    align-items: flex-start;
   }
 
   .backgroundCover {
@@ -319,12 +321,7 @@ button:disabled {
   }
 
   .formSection {
-    padding: clamp(1em, 1.2vw, 2em);
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: clamp(300px, 30vw, 450px);
-    position: relative;
+    margin: revert;
+    justify-content: flex-start;
   }
 }
