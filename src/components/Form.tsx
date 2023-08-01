@@ -105,7 +105,6 @@ export default function Form() {
           </div>
           <div className="buttonAuth">
             <Button
-              type="submit"
               variant="secondary"
               size="small"
               onClick={() => handleNotification('Redirect Login Facebook')}
